@@ -1,3 +1,7 @@
+body { /*Se n tiver flex o nao tem divisoria entre os elementos aside e main*/
+  display: flex;
+}
+
 aside {
       width: 300px;
       height: 100vh;
@@ -34,8 +38,34 @@ aside {
       border-radius: 6px;
     }
 
-    .tenta{
-       margin-bottom: 50px;
-        
-        
-    }
+    .anim {
+  transition: transform 0.4s ease;
+  transform: scale(1);
+}
+
+.anim:hover {
+  transform: scale(1.07);
+}
+
+
+    main {
+  padding: 30px;
+}
+
+.welcome h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.welcome p {
+  color: #555;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.welcome {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  width: 100%;  /* linha completa */
+}
