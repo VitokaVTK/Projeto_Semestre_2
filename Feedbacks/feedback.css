@@ -228,3 +228,228 @@ nav ul li a {
     transform: translateY(0);
   }
 }
+
+/*deixar logo do mobile escondida no desktop*/
+header{
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+  /* esconder o aside no mobile */
+  aside {
+    display: none;
+  }
+
+  header{
+    display: block;
+  }
+
+  body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+  main {
+    
+    width: 100%;          /* ocupa toda a largura */
+    max-width: 100%;      /* impede expansão além da tela */
+    padding: 15px 10px;   /* padding confortável */
+    margin: 0 auto;       /* centraliza */
+    box-sizing: border-box; /* inclui padding na largura */
+    overflow-x: hidden;   /* evita scroll horizontal */
+    justify-content: center;
+    
+  }
+
+  /* empilha os cards */
+  .dados-gerais {
+    display: grid;
+    grid-template-columns: 1fr; /* um card por linha */
+    gap: 15px;
+    width: 100%;
+    max-width: 400px; 
+    margin: 20px auto; /*alinhando no mobile */
+    padding: 0; 
+  }
+
+  /* Ajustes nos cards */
+  .card-info {
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center; /* centraliza conteúdo do card */
+  }
+
+  .welcome h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .welcome p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .logo-mobile-container {
+        display: block;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .logo-mobile {
+        width: 80px;  /* tamanho pequeno */
+        height: auto;
+        object-fit: contain;
+    }
+
+}
+
+
+/* BOTÃO HAMBURGER */
+.menu-btn {
+  display: none; /* só mobile */
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* MENU OFF-CANVAS */
+.mobile-menu {
+  display: none; /* escondido no desktop */
+  position: fixed;
+  top: 0;
+  right: -250px; /* fora da tela */
+  width: 250px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  padding: 20px;
+  flex-direction: column;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.mobile-menu.open {
+  right: 0; /* desliza pra dentro */
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.mobile-menu li {
+  margin-bottom: 20px;
+}
+
+.mobile-menu li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  font-size: 16px;
+  display: block;
+}
+
+/* Botão fechar */
+.close-menu {
+  background: transparent;
+  border: none;
+  position: absolute; /* posicionamento relativo ao offcanvas */
+  top: 10px;          /* distância do topo */
+  left: 10px;  
+  font-size: 28px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+/* MOBILE*/
+@media (max-width: 768px) {
+  .menu-btn {
+    
+    display: block; 
+  position: fixed; 
+  top: 25px;       
+  right: 25px;     
+  background: transparent;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+
+  aside {
+    display: none; /* esconde o menu lateral no mobile */
+  }
+}
+
+
+  
+
+  
+/* Modo alto contraste */
+body.acessibilidade {
+  background-color: #000; /* fundo preto */
+  color: #fff;           /* texto branco */
+}
+
+body.acessibilidade a {
+  color: #0ff;           /* links em ciano */
+}
+
+body.acessibilidade .card-info,
+body.acessibilidade .relatorio-card {
+  background-color: #222; /* cards escuros */
+  color: #fff;
+}
+
+body.acessibilidade button {
+  background-color: #555;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.btn-acessibilidade-desktop {
+  position: fixed; /* fixo no canto superior direito */
+  top: 20px;
+  right: 20px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 1002; /* acima de tudo */
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.btn-acessibilidade-desktop:hover {
+  background-color: #005ec7;
+}
+
+/* Oculta no mobile */
+@media (max-width: 768px) {
+  .btn-acessibilidade-desktop {
+    display: none;
+  }
+}
+
+
+body.acessibilidade .conteudo-principal,
+body.acessibilidade .conteudo-principal h4,
+body.acessibilidade .conteudo-principal p,
+body.acessibilidade .conteudo-principal li,
+body.acessibilidade .conteudo-principal strong,
+body.acessibilidade .conteudo-principal small {
+  color: #000 !important;
+}

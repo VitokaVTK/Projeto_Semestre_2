@@ -11,69 +11,118 @@
     <title>Congest</title>
 </head>
 <body>
-    <header>
-    
-    </header>
-  <aside>
-    <div class="container-fluid ">
-                  <a class="navbar-brand ms-4" href="#">
-    <img src="../Front/Img/logo_sem_fundo.png" class="img-fluid " alt="Bootstrap" width="180">
-    </a>
+  
 
-              </div>
 
-   <nav class="d-flex justify-content-center">
+<header>
+  <a class="imagemlog" href="#">
+    <img src="../Front/Img/logo_sem_fundo.png" class="logo-mobile" alt="Logo"></a>
+    <button id="menuToggle" class="menu-btn">&#9776;</button>
+<!-- Menu off-canvas -->
+<nav id="mobileMenu" class="mobile-menu">
+  <button id="closeMenu" class="close-menu">&times;</button>
   <ul>
-    <li class="anim"><a href="../Dashboard/index.html"><img src="../Front/Img/Dashboard.png" alt=""> Dashboard</a></li>
-    <li class="anim mt-2"><a href="../Feedbacks/feedback.html"><img src="../Front/Img/Feedbacks.png" alt=""> Feedbacks</a></li>
-    <li class="anim mt-2"><a href="../Usuarios/usuarios.html"><img src="../Front/Img/Usuario.png" alt=""> Usuários</a></li>
-    <li class="anim mt-2"><a href="../Treinamentos/treinamentos.html"><img src="../Front/Img/Treinamentos.png" alt=""> Treinamentos</a></li>
-    <li class="anim mt-2"><a href="#"><img src="../Front/Img/Relatorios.png" alt=""> Relatórios</a></li>
+    <button id="btnAcessibilidade" class="btn-acessibilidade">Modo Acessível</button>
+
+    <li><a href="../Dashboard/index.html">Dashboard</a></li>
+    <li><a href="../Feedbacks/feedback.html">Feedbacks</a></li>
+    <li><a href="../Usuarios/usuarios.html">Usuários</a></li>
+    <li><a href="../Treinamentos/treinamentos.html">Treinamentos</a></li>
+    <li><a href="../Relatorios/relatorios.html">Relatórios</a></li>
   </ul>
 </nav>
+</header>
 
-      <div class="user-box">
-    <img src="../Front/Img/user5.jpg" class="user-foto" alt="Foto de perfil">
-    <div class="user-info">
-      <h4>Vitorio Rangel</h4>
-      <p>vitoriorangel@gmail.com</p>
+<aside>
+  
+
+    <div class="container-fluid ">
+        <a class="navbar-brand ms-4" href="#">
+            <img src="../Front/Img/logo_sem_fundo.png" class="img-fluid " alt="Bootstrap" width="180">
+        </a>
     </div>
-    <i class="fa-solid fa-arrow-right-from-bracket logout"></i>
+
+    <nav class="d-flex justify-content-center">
+        <ul>
+            <li class="anim"><a href="../Dashboard/index.html"><img src="../Front/Img/Dashboard.png" alt=""> Dashboard</a></li>
+            <li class="anim mt-2"><a href="../Feedbacks/feedback.html"><img src="../Front/Img/Feedbacks.png" alt=""> Feedbacks</a></li>
+            <li class="anim mt-2"><a href="../Usuarios/usuarios.html"><img src="../Front/Img/Usuario.png" alt=""> Usuários</a></li>
+            <li class="anim mt-2"><a href="../Treinamentos/treinamentos.html"><img src="../Front/Img/Treinamentos.png" alt=""> Treinamentos</a></li>
+            <li class="anim mt-2"><a href="../Relatorios/relatorios.html"><img src="../Front/Img/Relatorios.png" alt=""> Relatórios</a></li>
+        </ul>
+    </nav>
+
+    <a href="#modalPerfil" class="user-box">
+        <img src="../Front/Img/user5.jpg" class="user-foto" alt="Foto de perfil">
+        <div class="user-info">
+            <h4>Vitorio Rangel</h4>
+            <p>vitoriorangel@gmail.com</p>
+        </div>
+        <i class="fa-solid fa-arrow-right-from-bracket logout"></i>
+    </a>
+</aside>
+
+<main class="fade-in">
+  <!-- Botao Desktop Acessibilidade -->
+<button id="btnAcessibilidadeDesktop" class="btn-acessibilidade-desktop">Modo Acessível</button>
+
+    <section class="welcome mt-5">
+        <h1>Olá, Vitorio Rangel</h1>
+        <p>Bem-vindo ao seu dashboard. Aqui você pode gerenciar seus usuários e o desenvolvimento da sua equipe.</p>
+    </section>
+
+    <section class="dados-gerais">
+        <div class="card-info"><p>Total de Funcionários Ativos</p><h2>120</h2></div>
+        <div class="card-info"><p>Funcionários em Treinamento</p><h2>18</h2></div>
+        <div class="card-info"><p>Feedbacks Pendentes/Novos</p><h2>12</h2></div>
+        <div class="card-info"><p>Taxa de Conclusão de Treinamentos (%)</p><h2>75%</h2></div>
+    </section>
+</main>
+
+
+<div id="modalPerfil" class="modal">
+  <div class="modal-content">
+    <a href="#" class="close">×</a>
+
+    <div class="perfil-modal-info">
+      <img src="../Front/Img/user5.jpg" alt="Foto perfil" class="perfil-modal-img">
+      <h2>Vitorio Rangel</h2>
+      <p>Email: vitoriorangel@gmail.com</p>
+      <p>Cargo: Administrador</p>
+    </div>
+
   </div>
+</div>
 
-  </aside>
+<script>
+  const menuBtn = document.getElementById("menuToggle");
+const closeBtn = document.getElementById("closeMenu");
+const mobileMenu = document.getElementById("mobileMenu");
 
-    <!--DIVISA-->
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.add("open");
+});
 
-    <main class="fade-in">
+closeBtn.addEventListener("click", () => {
+  mobileMenu.classList.remove("open");
+});
 
-      <section class="welcome mt-5 ms-5">
-    <h1>Olá, Vitorio Rangel</h1>
-    <p>Bem-vindo ao seu dashboard. Aqui você pode gerenciar seus usuários e o desenvolvimento da sua equipe.</p>
-  </section>
-  <section class="dados-gerais">
-    <div class="card-info">
-      <p>Total de Funcionários Ativos</p>
-      <h2>120</h2>
-    </div>
+/*acessibilidade*/
+const btnAcessibilidade = document.getElementById("btnAcessibilidade");
 
-    <div class="card-info">
-      <p>Funcionários em Treinamento</p>
-      <h2>18</h2>
-    </div>
+  btnAcessibilidade.addEventListener("click", () => {
+    document.body.classList.toggle("acessibilidade");
+  });
 
-    <div class="card-info">
-      <p>Feedbacks Pendentes/Novos</p>
-      <h2>12</h2>
-    </div>
 
-    <div class="card-info">
-      <p>Taxa de Conclusão de Treinamentos (%)</p>
-      <h2>75%</h2>
-    </div>
-  </section>
-    </main>
+/*acessibilidade pro desktop*/
+const btnDesktop = document.getElementById("btnAcessibilidadeDesktop");
 
+btnDesktop.addEventListener("click", () => {
+  document.body.classList.toggle("acessibilidade");
+});
+
+</script>
 
     <script src="/Front/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -164,7 +164,7 @@ aside {
   margin-bottom: 15px;
 }
 
-.btn-ver {
+.btn-ver-perfil {
   background: #007bff;
   border: none;
   padding: 8px 14px;
@@ -203,4 +203,335 @@ nav ul li a {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-box {
+  background: #fff;
+  width: 380px;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: fadeInUp .35s ease;
+  text-align: center;
+}
+
+.perfil-foto {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.close-modal {
+  float: right;
+  font-size: 22px;
+  cursor: pointer;
+  opacity: .7;
+  transition: .2s;
+}
+
+.close-modal:hover {
+  opacity: 1;
+}
+
+.btn-fechar {
+  margin-top: 18px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #005baa;
+  color: white;
+  border-radius: 8px;
+  transition: .3s;
+}
+
+.btn-fechar:hover {
+  background: #003e78;
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+
+/*deixar logo do mobile escondida no desktop*/
+header{
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+  /* esconder o aside no mobile */
+  aside {
+    display: none;
+  }
+
+  header{
+    display: block;
+  }
+
+  body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* ocupa a largura */
+    max-width: 100%;      
+    padding: 15px 10px;   
+    margin: 0 auto; /* centraliza */
+    
+    overflow-x: hidden; /* evita scroll horizontal */
+    justify-content: center;
+    
+  }
+
+  /* empilha os cards */
+  .dados-gerais {
+    display: grid;
+    grid-template-columns: 1fr; /* um card por linha */
+    gap: 15px;
+    width: 100%;
+    max-width: 400px; 
+    margin: 20px auto; /*alinhando no mobile */
+    padding: 0; 
+  }
+
+  /* ajustes nos cards */
+  .card-info {
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center; /* centraliza conteúdo do card */
+  }
+
+  .welcome h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .welcome p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .logo-mobile-container {
+        display: block;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .logo-mobile {
+        width: 80px;  /* tamanho pequeno */
+        height: auto;
+        object-fit: contain;
+    }
+
+}
+
+/* Modal*/
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal:target {
+  display: flex;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  max-width: 380px;
+  width: 100%;
+  animation: fadeIn .3s;
+  text-align: center;
+}
+
+.close {
+  display: block;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: bold;
+  color: #444;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.close:hover {
+  color: red;
+}
+
+.perfil-modal-info img.perfil-modal-img {
+  width: 85px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+
+/* BOTÃO HAMBURGER */
+.menu-btn {
+  display: none; /* só mobile */
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* MENU OFF-CANVAS */
+.mobile-menu {
+  display: none; /* escondido no desktop */
+  position: fixed;
+  top: 0;
+  right: -250px; /* fora da tela */
+  width: 250px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  padding: 20px;
+  flex-direction: column;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.mobile-menu.open {
+  right: 0; /* desliza pra dentro */
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.mobile-menu li {
+  margin-bottom: 20px;
+}
+
+.mobile-menu li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  font-size: 16px;
+  display: block;
+}
+
+/* Botão fechar */
+.close-menu {
+  background: transparent;
+  border: none;
+  position: absolute; /* posicionamento relativo ao offcanvas */
+  top: 10px;          /* distância do topo */
+  left: 10px;  
+  font-size: 28px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+/* ===== MEDIA QUERY MOBILE ===== */
+@media (max-width: 768px) {
+  .menu-btn {
+    
+    display: block; 
+  position: fixed; 
+  top: 25px;       
+  right: 25px;     
+  background: transparent;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+
+  aside {
+    display: none; /* esconde o menu lateral no mobile */
+  }
+}
+
+/* Modo alto contraste */
+body.acessibilidade {
+  background-color: #000; /* fundo preto */
+  color: #fff;           /* texto branco */
+}
+
+body.acessibilidade a {
+  color: #0ff;           /* links em ciano */
+}
+
+body.acessibilidade .card-info,
+body.acessibilidade .relatorio-card {
+  background-color: #222; /* card escuro */
+  color: #fff;
+}
+
+body.acessibilidade button {
+  background-color: #555;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+
+.btn-acessibilidade-desktop {
+  position: fixed; /* fixo no canto superior direito */
+  top: 20px;
+  right: 20px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 1002; /* acima de tudo */
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.btn-acessibilidade-desktop:hover {
+  background-color: #005ec7;
+}
+
+/* Oculta no mobile */
+@media (max-width: 768px) {
+  .btn-acessibilidade-desktop {
+    display: none;
+  }
+}
+
+/* Forçando texto preto nos elementos dentro da seção de conteúdo principal */
+body.acessibilidade .usuarios-container,
+body.acessibilidade .usuarios-container h4,
+body.acessibilidade .usuarios-container p,
+body.acessibilidade .usuarios-container li,
+body.acessibilidade .usuarios-container strong,
+body.acessibilidade .usuarios-container small {
+  color: #000 !important;
 }

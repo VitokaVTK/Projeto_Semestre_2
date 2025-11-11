@@ -169,178 +169,52 @@ nav ul li a {
     transform: translateY(0);
   }
 }
-body {
-  display: flex;
-  min-height: 100vh;
-  background: #fafafa;
+
+.relatorios-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  padding: 40px 60px;
 }
 
-aside {
-  width: 300px;
-  height: 100vh;
-  border-right: 1px solid #ccc;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  /* REMOVIDO justify-content: space-between */
-}
-
-.logo {
-  text-align: center; /* centraliza a logo */
-  margin-bottom: 40px;
-}
-
-nav {
-  width: 100%;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 8px;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 6px;
+.relatorio-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
   transition: 0.3s;
 }
 
-nav li:hover {
-  background: #f2f2f2;
+.relatorio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
 }
 
-nav ul li a {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: black;
-}
-
-/* ===== USER BOX ===== */
-.user-box {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding-top: 18px;
-  border-top: 1px solid #ccc;
-  margin-top: auto; /* empurra para o canto inferior */
-  cursor: pointer;
-  border-radius: 8px;
-  text-decoration: none;
-  color: inherit;
-  transition: .3s;
-}
-
-.user-box:hover {
-  background: rgba(255,255,255,.08);
-}
-
-.user-foto {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  object-fit: cover;
-  background: #eee;
-}
-
-.user-info h4 {
-  font-size: 15px;
+.relatorio-card h3 {
+  font-size: 20px;
   font-weight: 600;
-  margin: 0;
+  color: #1a1a1a;
 }
 
-.user-info p {
-  font-size: 12px;
-  color: #777;
-  margin: 0;
+.relatorio-card p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #6d6d6d;
 }
 
-/* ===== MAIN ===== */
-main {
-  flex: 1;
-  padding: 30px;
-}
-
-/* Foto + Box no aside */
-.user-box {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
+.btn-acessar {
+  margin-top: 15px;
+  width: 100%;
   padding: 10px;
+  border: none;
+  background: #005baa;
+  color: #fff;
   border-radius: 8px;
-  text-decoration: none;
-  color: inherit;
   transition: .3s;
 }
 
-.user-box:hover {
-  background: rgba(255,255,255,.08);
-}
-
-.user-foto {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
-
-/* Modal*/
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.6);
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.modal:target {
-  display: flex;
-}
-
-.modal-content {
-  background: #fff;
-  padding: 25px 30px;
-  border-radius: 10px;
-  max-width: 380px;
-  width: 100%;
-  animation: fadeIn .3s;
-  text-align: center;
-}
-
-.close {
-  display: block;
-  text-decoration: none;
-  font-size: 28px;
-  font-weight: bold;
-  color: #444;
-  text-align: right;
-  margin-bottom: 10px;
-}
-
-.close:hover {
-  color: red;
-}
-
-.perfil-modal-info img.perfil-modal-img {
-  width: 85px;
-  border-radius: 50%;
-  margin-bottom: 15px;
-}
-
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(.95); }
-  to { opacity: 1; transform: scale(1); }
+.btn-acessar:hover {
+  background: #003e78;
 }
 
 /*deixar logo do mobile escondida no desktop*/
@@ -505,6 +379,7 @@ header{
   }
 }
 
+
 /* Modo alto contraste */
 body.acessibilidade {
   background-color: #000; /* fundo preto */
@@ -527,7 +402,8 @@ body.acessibilidade button {
   border: 1px solid #fff;
 }
 
-  .btn-acessibilidade-desktop {
+
+.btn-acessibilidade-desktop {
   position: fixed; /* fixo no canto superior direito */
   top: 20px;
   right: 20px;
@@ -541,6 +417,14 @@ body.acessibilidade button {
   font-size: 14px;
   transition: background 0.3s;
 }
+body.acessibilidade .conteudo-principal,
+body.acessibilidade .conteudo-principal h4,
+body.acessibilidade .conteudo-principal p,
+body.acessibilidade .conteudo-principal li,
+body.acessibilidade .conteudo-principal strong,
+body.acessibilidade .conteudo-principal small {
+  color: #000 !important;
+}
 
 .btn-acessibilidade-desktop:hover {
   background-color: #005ec7;
@@ -552,6 +436,3 @@ body.acessibilidade button {
     display: none;
   }
 }
-
-
-  

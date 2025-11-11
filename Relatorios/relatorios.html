@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Front/css/bootstrap.min.css">
-    
-    <link rel="stylesheet" href="treinamentos.css">
+    <link rel="stylesheet" href="relatorios.css">
     
     
     
@@ -59,67 +58,39 @@
     <!--DIVISA-->
 
     <main class="fade-in">
-      <!-- Botão Desktop Acessibilidade -->
+        <!-- Botão Desktop Acessibilidade -->
 <button id="btnAcessibilidadeDesktop" class="btn-acessibilidade-desktop">Modo Acessível</button>
 
 
   <section class="welcome mt-5 ms-5">
-    <h1>Treinamentos</h1>
-    <p>Acompanhe o progresso dos treinamentos da sua equipe e gerencie os módulos disponíveis.</p>
+    <h1>Relatórios</h1>
+    <p>Acompanhe métricas, desempenho e resultados gerais da sua equipe ao longo do tempo.</p>
   </section>
 
-  <section class="treinamentos-container">
+  <section class="relatorios-container">
 
-    <div class="treino-card">
-      <h3>Atendimento ao Cliente</h3>
-      <p>Duração: 2h | 5 Módulos</p>
-
-      <div class="progresso">
-        <div class="progresso-barra" style="width: 80%;"></div>
-      </div>
-
-      <span class="percentual">80% Concluído</span>
-
-      <button class="btn-acessar">Acessar Treinamento</button>
+    <div class="relatorio-card">
+      <h3>Relatório de Feedbacks</h3>
+      <p>Resumo de avaliações e desempenho individual.</p>
+      <button class="btn-acessar">Ver Relatório</button>
     </div>
 
-    <div class="treino-card">
-      <h3>Ética e Conduta Corporativa</h3>
-      <p>Duração: 1h | 3 Módulos</p>
-
-      <div class="progresso">
-        <div class="progresso-barra" style="width: 40%;"></div>
-      </div>
-
-      <span class="percentual">40% Concluído</span>
-
-      <button class="btn-acessar">Acessar Treinamento</button>
+    <div class="relatorio-card">
+      <h3>Relatório de Treinamentos</h3>
+      <p>Progresso e conclusão dos módulos realizados.</p>
+      <button class="btn-acessar">Ver Relatório</button>
     </div>
 
-    <div class="treino-card">
-      <h3>Segurança no Trabalho </h3>
-      <p>Duração: 3h | 7 Módulos</p>
-
-      <div class="progresso">
-        <div class="progresso-barra" style="width: 100%;"></div>
-      </div>
-
-      <span class="percentual">100% Concluído</span>
-
-      <button class="btn-acessar">Acessar Treinamento</button>
+    <div class="relatorio-card">
+      <h3>Relatório de Usuários</h3>
+      <p>Dados gerais dos colaboradores cadastrados.</p>
+      <button class="btn-acessar">Ver Relatório</button>
     </div>
 
-    <div class="treino-card">
-      <h3>Comunicação Interna Eficaz</h3>
-      <p>Duração: 1h30 | 4 Módulos</p>
-
-      <div class="progresso">
-        <div class="progresso-barra" style="width: 10%;"></div>
-      </div>
-
-      <span class="percentual">10% Concluído</span>
-
-      <button class="btn-acessar">Acessar Treinamento</button>
+    <div class="relatorio-card">
+      <h3>Relatório de Engajamento</h3>
+      <p>Nível de participação dos colaboradores na plataforma.</p>
+      <button class="btn-acessar">Ver Relatório</button>
     </div>
 
   </section>
@@ -128,10 +99,8 @@
 
 
 
-
     <script>
-
-const menuBtn = document.getElementById("menuToggle");
+        const menuBtn = document.getElementById("menuToggle");
 const closeBtn = document.getElementById("closeMenu");
 const mobileMenu = document.getElementById("mobileMenu");
 
@@ -149,7 +118,6 @@ const btnAcessibilidade = document.getElementById("btnAcessibilidade");
   btnAcessibilidade.addEventListener("click", () => {
     document.body.classList.toggle("acessibilidade");
   });
-
 
   /*acessibilidade pro desktop*/
 const btnDesktop = document.getElementById("btnAcessibilidadeDesktop");

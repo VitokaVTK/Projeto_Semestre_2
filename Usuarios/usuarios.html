@@ -11,9 +11,22 @@
     <title>Congest</title>
 </head>
 <body>
-    <header>
-    
-    </header>
+    <header><a class="imagemlog" href="#">
+    <img src="../Front/Img/logo_sem_fundo.png" class="logo-mobile" alt="Logo"></a>
+    <button id="menuToggle" class="menu-btn">&#9776;</button>
+<!-- Menu off-canvas -->
+<nav id="mobileMenu" class="mobile-menu">
+  <button id="closeMenu" class="close-menu">&times;</button>
+  <ul>
+    <button id="btnAcessibilidade" class="btn-acessibilidade">Modo Acessível</button>
+    <li><a href="../Dashboard/index.html">Dashboard</a></li>
+    <li><a href="../Feedbacks/feedback.html">Feedbacks</a></li>
+    <li><a href="../Usuarios/usuarios.html">Usuários</a></li>
+    <li><a href="../Treinamentos/treinamentos.html">Treinamentos</a></li>
+    <li><a href="../Relatorios/relatorios.html">Relatórios</a></li>
+  </ul>
+</nav>
+</header>
   <aside>
     <div class="container-fluid ">
                   <a class="navbar-brand ms-4" href="#">
@@ -28,7 +41,7 @@
     <li class="anim mt-2"><a href="../Feedbacks/feedback.html"><img src="../Front/Img/Feedbacks.png" alt=""> Feedbacks</a></li>
     <li class="anim mt-2"><a href="../Usuarios/usuarios.html"><img src="../Front/Img/Usuario.png" alt=""> Usuários</a></li>
     <li class="anim mt-2"><a href="../Treinamentos/treinamentos.html"><img src="../Front/Img/Treinamentos.png" alt=""> Treinamentos</a></li>
-    <li class="anim mt-2"><a href="#"><img src="../Front/Img/Relatorios.png" alt=""> Relatórios</a></li>
+    <li class="anim mt-2"><a href="../Relatorios/relatorios.html"><img src="../Front/Img/Relatorios.png" alt=""> Relatórios</a></li>
   </ul>
 </nav>
 
@@ -41,11 +54,15 @@
     <i class="fa-solid fa-arrow-right-from-bracket logout"></i>
   </div>
 
+
   </aside>
 
     <!--DIVISA-->
 
     <main class="fade-in">
+      <!-- Botão Desktop Acessibilidade -->
+<button id="btnAcessibilidadeDesktop" class="btn-acessibilidade-desktop">Modo Acessível</button>
+
 
   <section class="welcome mt-5 ms-5">
     <h1>Gestão de Usuários</h1>
@@ -55,39 +72,129 @@
   <section class="usuarios-container">
 
     <div class="user-card">
-      <img src="../Front/Img/user1.webp" alt="Foto do usuário" class="user-card-photo">
-      <h3>João Silva</h3>
-      <p>Cargo: Supervisor</p>
-      <button class="btn-ver">Ver Perfil</button>
-    </div>
+  <img src="../Front/Img/user1.webp" alt="Foto do usuário" class="user-card-photo">
+  <h3>João Silva</h3>
+  <p>Cargo: Supervisor</p>
+  <button class="btn-ver-perfil" 
+    data-nome="João Silva"
+    data-email="joao.silva@empresa.com"
+    data-cargo="Supervisor"
+    data-foto="../Front/Img/user1.webp">
+    Ver Perfil
+  </button>
+</div>
 
-    <div class="user-card">
-      <img src="../Front/Img/user2.webp" alt="Foto do usuário" class="user-card-photo">
-      <h3>Maria Oliveira</h3>
-      <p>Cargo: Atendente</p>
-      <button class="btn-ver">Ver Perfil</button>
-    </div>
+<div class="user-card">
+  <img src="../Front/Img/user2.webp" alt="Foto do usuário" class="user-card-photo">
+  <h3>Maria Oliveira</h3>
+  <p>Cargo: Atendente</p>
+  <button class="btn-ver-perfil" 
+    data-nome="Maria Oliveira"
+    data-email="maria.oliveira@empresa.com"
+    data-cargo="Atendente"
+    data-foto="../Front/Img/user2.webp">
+    Ver Perfil
+  </button>
+</div>
 
-    <div class="user-card">
-      <img src="../Front/Img/user3.jpg" alt="Foto do usuário" class="user-card-photo">
-      <h3>Ana Costa</h3>
-      <p>Cargo: RH</p>
-      <button class="btn-ver">Ver Perfil</button>
-    </div>
+<div class="user-card">
+  <img src="../Front/Img/user3.jpg" alt="Foto do usuário" class="user-card-photo">
+  <h3>Ana Costa</h3>
+  <p>Cargo: RH</p>
+  <button class="btn-ver-perfil" 
+    data-nome="Ana Costa"
+    data-email="ana.costa@empresa.com"
+    data-cargo="Recursos Humanos"
+    data-foto="../Front/Img/user3.jpg">
+    Ver Perfil
+  </button>
+</div>
 
-    <div class="user-card">
-      <img src="../Front/Img/user4.png" alt="Foto do usuário" class="user-card-photo">
-      <h3>Pedro Santos</h3>
-      <p>Cargo: Técnico</p>
-      <button class="btn-ver">Ver Perfil</button>
-    </div>
+<div class="user-card">
+  <img src="../Front/Img/user4.png" alt="Foto do usuário" class="user-card-photo">
+  <h3>Pedro Santos</h3>
+  <p>Cargo: Técnico</p>
+  <button class="btn-ver-perfil" 
+    data-nome="Pedro Santos"
+    data-email="pedro.santos@empresa.com"
+    data-cargo="Técnico"
+    data-foto="../Front/Img/user4.png">
+    Ver Perfil
+  </button>
+</div>
+
 
   </section>
 
 </main>
 
 
+<div class="modal-overlay" id="modalPerfil">
+  <div class="modal-box">
+    <span class="close-modal" id="closeModal">&times;</span>
+
+    <img id="perfilFoto" class="perfil-foto" src="" alt="Foto do usuário">
+
+    <h2 id="perfilNome"></h2>
+    <p id="perfilEmail"></p>
+    <p id="perfilCargo"></p>
+
+    <button class="btn-fechar" id="btnFecharModal">Fechar</button>
+  </div>
+</div>
+
 
     <script src="/Front/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  /*modal*/
+  const modal = document.getElementById("modalPerfil");
+  const fecharModal = document.getElementById("closeModal");
+  const btnFechar = document.getElementById("btnFecharModal");
+
+  document.querySelectorAll(".btn-ver-perfil").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.getElementById("perfilNome").innerText = btn.dataset.nome;
+      document.getElementById("perfilEmail").innerText = btn.dataset.email;
+      document.getElementById("perfilCargo").innerText = btn.dataset.cargo;
+      document.getElementById("perfilFoto").src = btn.dataset.foto;
+      modal.style.display = "flex";
+    });
+  });
+
+  fecharModal.onclick = () => modal.style.display = "none";
+  btnFechar.onclick = () => modal.style.display = "none";
+  
+  /*offcanvas*/
+  const menuBtn = document.getElementById("menuToggle");
+const closeBtn = document.getElementById("closeMenu");
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.add("open");
+});
+
+closeBtn.addEventListener("click", () => {
+  mobileMenu.classList.remove("open");
+});
+
+/*acessibilidade*/
+const btnAcessibilidade = document.getElementById("btnAcessibilidade");
+
+  btnAcessibilidade.addEventListener("click", () => {
+    document.body.classList.toggle("acessibilidade");
+  });
+
+  /*acessibilidade pro desktop*/
+const btnDesktop = document.getElementById("btnAcessibilidadeDesktop");
+
+btnDesktop.addEventListener("click", () => {
+  document.body.classList.toggle("acessibilidade");
+});
+
+</script>
+
+
+    </script>
 </body>
 </html>

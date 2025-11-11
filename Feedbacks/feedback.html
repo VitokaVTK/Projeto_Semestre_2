@@ -11,9 +11,23 @@
     <title>Congest</title>
 </head>
 <body>
-    <header>
-    
-    </header>
+    <header><a class="imagemlog" href="#">
+    <img src="../Front/Img/logo_sem_fundo.png" class="logo-mobile" alt="Logo"></a>
+    <button id="menuToggle" class="menu-btn">&#9776;</button>
+<!-- Menu off-canvas -->
+<nav id="mobileMenu" class="mobile-menu">
+  
+  <button id="closeMenu" class="close-menu">&times;</button>
+  <ul>
+    <button id="btnAcessibilidade" class="btn-acessibilidade">Modo Acessível</button>
+    <li><a href="../Dashboard/index.html">Dashboard</a></li>
+    <li><a href="../Feedbacks/feedback.html">Feedbacks</a></li>
+    <li><a href="../Usuarios/usuarios.html">Usuários</a></li>
+    <li><a href="../Treinamentos/treinamentos.html">Treinamentos</a></li>
+    <li><a href="../Relatorios/relatorios.html">Relatórios</a></li>
+  </ul>
+</nav>
+</header>
   <aside>
     <div class="container-fluid ">
                   <a class="navbar-brand ms-4" href="#">
@@ -28,7 +42,7 @@
     <li class="anim mt-2"><a href="../Feedbacks/feedback.html"><img src="../Front/Img/Feedbacks.png" alt=""> Feedbacks</a></li>
     <li class="anim mt-2"><a href="../Usuarios/usuarios.html"><img src="../Front/Img/Usuario.png" alt=""> Usuários</a></li>
     <li class="anim mt-2"><a href="../Treinamentos/treinamentos.html"><img src="../Front/Img/Treinamentos.png" alt=""> Treinamentos</a></li>
-    <li class="anim mt-2"><a href="#"><img src="../Front/Img/Relatorios.png" alt=""> Relatórios</a></li>
+    <li class="anim mt-2"><a href="../Relatorios/relatorios.html"><img src="../Front/Img/Relatorios.png" alt=""> Relatórios</a></li>
   </ul>
 </nav>
 
@@ -46,7 +60,10 @@
     <!--DIVISA-->
 
     <main class="fade-in">
-      <section class="welcome mt-5 ms-5">
+      <!-- Botão Desktop Acessibilidade -->
+<button id="btnAcessibilidadeDesktop" class="btn-acessibilidade-desktop">Modo Acessível</button>
+
+      <section class="welcome ">
     <h1>Feedbacks da Equipe</h1>
 <p>Acompanhe, registre e analise os feedbacks dos colaboradores para promover melhoria contínua e desenvolvimento interno.</p>
 
@@ -75,7 +92,7 @@
   </section>
 
   
-  <section class="conteudo-principal">
+  <section class="conteudo-principal ms-5">
     
     <!-- ATIVIDADES RECENTES -->
     <div class="atividade-recente">
@@ -125,6 +142,32 @@
   </main>
 
 
-    <script src="/Front/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const menuBtn = document.getElementById("menuToggle");
+const closeBtn = document.getElementById("closeMenu");
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.add("open");
+});
+
+closeBtn.addEventListener("click", () => {
+  mobileMenu.classList.remove("open");
+});
+
+/*acessibilidade*/
+const btnAcessibilidade = document.getElementById("btnAcessibilidade");
+
+  btnAcessibilidade.addEventListener("click", () => {
+    document.body.classList.toggle("acessibilidade");
+  });
+
+  /*acessibilidade pro desktop*/
+const btnDesktop = document.getElementById("btnAcessibilidadeDesktop");
+
+btnDesktop.addEventListener("click", () => {
+  document.body.classList.toggle("acessibilidade");
+});
+    </script>
 </body>
 </html>

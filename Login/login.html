@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../Front/css/bootstrap.min.css">
+  <link rel="stylesheet" href="login.css">
+  <title>Entrar - Congest</title>
+</head>
+<body>
+
+<div class="login-container">
+
+  <div class="login-box fade-in">
+    <img src="../Front/Img/logo_sem_fundo.png" class="logo" alt="Logo">
+
+    <h2>Bem-vindo</h2>
+    <p>Faça login para acessar o sistema</p>
+
+    <form id="loginForm">
+  <input type="email" id="email" placeholder="Email" required>
+  <input type="password" id="senha" placeholder="Senha" required>
+  <button type="submit" class="btn-login">Entrar</button>
+</form>
+
+
+    <a href="#" class="forgot">Esqueci minha senha</a>
+  </div>
+
+</div>
+
+    <script>
+  const form = document.getElementById("loginForm");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // impede recarregar a página
+
+    const email = document.getElementById("email").value.trim();
+    const senha = document.getElementById("senha").value.trim();
+
+    if (email !== "" && senha !== "") {
+      // Redireciona para o Dashboard
+      window.location.href = "../Dashboard/index.html";
+    } else {
+      alert("Preencha todos os campos para continuar.");
+    }
+  });
+
+  /*acessibilidade pro desktop*/
+const btnDesktop = document.getElementById("btnAcessibilidadeDesktop");
+
+btnDesktop.addEventListener("click", () => {
+  document.body.classList.toggle("acessibilidade");
+});
+</script>
+
+</body>
+</html>

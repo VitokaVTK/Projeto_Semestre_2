@@ -1,0 +1,110 @@
+/* Paleta principal */
+:root {
+  --cor-primaria: #4346d4;
+  
+  --fundo-gradiente-1: #ffffff;
+  --fundo-gradiente-2: #4263bd;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, var(--fundo-gradiente-1), var(--fundo-gradiente-2));
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container de login */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Caixa com efeito vidro */
+.login-box {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  padding: 40px;
+  border-radius: 18px;
+  text-align: center;
+  width: 350px;
+  box-shadow: 0px 10px 40px rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+/* Logo */
+.logo {
+  width: 160px;
+  margin-bottom: 10px;
+}
+
+/* Textos */
+.login-box h2 {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.login-box p {
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 25px;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 15px;
+  outline: none;
+  background: #ffffffd9;
+  font-size: 15px;
+}
+
+/* Botão */
+.btn-login {
+  width: 100%;
+  padding: 12px;
+  background: var(--cor-primaria);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  transition: .3s;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.btn-login:hover {
+  background: var(--cor-secundaria);
+}
+
+/* Link */
+.forgot {
+  display: block;
+  margin-top: 12px;
+  color: #fff;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  opacity: .9;
+}
+
+.forgot:hover {
+  opacity: 1;
+}
+
+/* Animação */
+.fade-in {
+  animation: fadeIn .7s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
